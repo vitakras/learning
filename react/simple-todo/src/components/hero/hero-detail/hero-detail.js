@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import heroPropType from '../hero';
 
-const Hero = ({hero}) => (
+const HeroDetail = ({hero}) => (
     <div>
         <h2>{hero.name} Details</h2>
         <div><span>id: </span>{hero.id}</div>
@@ -9,11 +10,8 @@ const Hero = ({hero}) => (
     </div>
 );
 
-Hero.propTypes = {
-    hero: PropTypes.shape({
-        id: PropTypes.number.isRequired,
-        name: PropTypes.string.isRequired
-    })
+HeroDetail.propTypes = {
+    hero: heroPropType
 };
 
-export default Hero;
+export default HeroDetail;

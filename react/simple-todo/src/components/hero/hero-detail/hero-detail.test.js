@@ -1,9 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme'; 
 
-import Hero from './hero';
+import HeroDetail from './hero-detail';
 
-describe('Hero Component', () => {
+describe('HeroDetail Component', () => {
     let subject;
     let hero;
 
@@ -13,7 +13,7 @@ describe('Hero Component', () => {
             name: "Vitaliy"
         };
         
-        subject =  shallow(<Hero hero={hero}/>);
+        subject =  shallow(<HeroDetail hero={hero}/>);
     });
 
     it('includes the heroes name', () => {
