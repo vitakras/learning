@@ -22,7 +22,7 @@ describe('HeroEdit Component', () => {
         subject = shallow(<HeroEdit hero={hero} onHeroUpdated={heroUpdated} />);
         subject.find('input').simulate('change', {target: {
             value: 'Iron Man'
-          }});
+        }});
 
         expect(hero.name).toBe('Iron Man');
     });
