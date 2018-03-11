@@ -19,8 +19,8 @@ class HeroEdit extends Component {
             name: event.target.value
         });
 
-        if (this.props.onHeroUpdated != undefined) {
-            this.props.onHeroUpdated({...this.props.hero, name: this.state.name})
+        if (this.props.onHeroUpdated !== undefined) {
+            this.props.onHeroUpdated({...this.props.hero, name: event.target.value})
         }
     }
 
@@ -29,7 +29,7 @@ class HeroEdit extends Component {
       <div>
         <label>name:
           <input id='heroName' placeholder="name" 
-            value={ this.state.name }
+            value={ this.props.hero.name }
             onChange={this.handleChange}
             type='text'/>
         </label>

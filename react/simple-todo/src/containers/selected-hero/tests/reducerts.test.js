@@ -3,7 +3,7 @@ import {
 } from 'immutable';
 
 import {
-    SELECT_HERO
+    SELECT_HERO, UPDATE_HERO
 } from '../constans';
 import selectedHeroReducer from '../reducer';
 
@@ -33,6 +33,30 @@ describe('Selected Hero Reducer', () => {
             });
 
             expect(selectedHeroReducer(undefined, action)).toEqual(expectedState);
+        });
+    });
+
+    describe('When a hero is updated', () => {
+        it('Should return the updated hero', () => {
+            const action = {
+                type: UPDATE_HERO,
+                hero: {
+                    id: 0,
+                    name: 'Iron Man'
+                }
+            };
+
+            const startState = initialState.set('selectedHero', {
+                id: 0,
+                name: 'Vitaliy'
+            });
+
+            const expectedState =  startState.set('selectedHero', {
+                id: 0,
+                name: 'Iron Man'
+            });
+
+            expect(selectedHeroReducer(startState, action)).toEqual(expectedState);
         });
     });
 });
