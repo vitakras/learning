@@ -2,40 +2,23 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import heroPropType from '../hero';
 
-class HeroEdit extends Component {
-
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            name: props.hero ? props.hero.name : ''
-        };
-
-        this.handleChange = this.handleChange.bind(this);
-    }
-
-    handleChange(event) {
-        this.setState({
-            name: event.target.value
-        });
-
-        if (this.props.onHeroUpdated !== undefined) {
-            this.props.onHeroUpdated({...this.props.hero, name: event.target.value})
+const HeroEdit = ({hero, onHeroUpdated}) => {
+    const handleChange = (event) => {
+        if (onHeroUpdated !== undefined) {
+            onHeroUpdated({...hero, name: event.target.value});
         }
-    }
+    };
 
-    render() {
-      return (
+    return (
       <div>
         <label>name:
           <input id='heroName' placeholder="name" 
-            value={ this.props.hero.name }
-            onChange={this.handleChange}
+            value={ hero.name }
+            onChange={handleChange}
             type='text'/>
         </label>
       </div>
-      )
-    }
+    );
 };
 
 HeroEdit.propTypes = {
