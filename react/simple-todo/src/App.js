@@ -9,8 +9,7 @@ class App extends Component {
     return (
       <div>
         <h1>{title}</h1>
-        <SelectedHero/>
-      </div>
+        </div>
     );
   }
 }
