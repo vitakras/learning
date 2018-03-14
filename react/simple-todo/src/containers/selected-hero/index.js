@@ -8,7 +8,7 @@ import heroPropType from '../../components/hero/hero';
 
 import { updateHero } from './actions';
 
-const SelectedHero = ({hero, onHeroUpdated}) => {
+export const SelectedHero = ({hero, onHeroUpdated}) => {
     return (
         <div className="selectedHero">
           <HeroDetail hero={hero} />
